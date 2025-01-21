@@ -1,47 +1,39 @@
-HF JSON Tool
-HF JSON Tool is a command-line Python application that showcases how to:
+# HF JSON Tool
 
-Load and validate a local JSON dataset using:
-Pydantic for schema validation
-Hugging Face Datasets to parse JSON files into a Dataset object.
-Push the validated dataset to the Hugging Face Hub.
-Read the dataset back from the Hugging Face Hub.
-Write the downloaded dataset to a local JSON file.
-All of these actions are presented via a simple menu in the command line, allowing you to select which step you want to perform.
+**HF JSON Tool** is a command-line Python application that demonstrates how to:
 
-Features
-Menu-Driven Interface:
-The script presents a menu with options (1–5) for each specific action.
+1. **Load and Validate** a local JSON dataset (e.g., `emails (1).json`) using:
+   - [Pydantic](https://docs.pydantic.dev/) for schema validation
+   - [Hugging Face Datasets](https://github.com/huggingface/datasets) to parse JSON files
+2. **Push** the validated dataset to the [Hugging Face Hub](https://huggingface.co/)
+3. **Read** the dataset **back** from the Hub
+4. **Write** the downloaded dataset **to a local JSON file**
 
-Validation with Pydantic:
+All of these actions are presented via a simple **menu** so you can choose exactly which step to perform.
 
-Ensures your JSON records match a defined schema (EmailRecord model).
-Prints how many records are valid (and can be used downstream).
-Integration with Hugging Face Hub:
+---
 
-Easily push validated data to your repository on the Hugging Face Hub.
-Optionally log in via terminal (no Jupyter or Colab environment required).
-Local JSON Support:
+## Features
 
-Load from your local JSON file (e.g., emails (1).json).
-Save any Hugging Face Dataset to JSON (e.g., downloaded_emails.json).
+- **Menu-Driven Interface**  
+  Interactively select your desired action (load/validate, push, read, save, or exit).
 
+- **Pydantic Validation**  
+  Automatically checks each record in your JSON file against a defined schema (`EmailRecord`). Identifies invalid records immediately.
 
-Typical Workflow
-Option 1 - Load and Validate:
+- **Hugging Face Hub Integration**  
+  Easily push validated data to your own repository on the Hugging Face Hub. Log in via CLI (no Jupyter environment needed).
 
-Reads emails (1).json into a Hugging Face Dataset.
-Validates each record against EmailRecord.
-Stores the resulting validated dataset in memory.
-Option 2 - Push to Hub:
+- **JSON Input/Output**  
+  - Read from a local file (`emails (1).json`)
+  - Save any Hugging Face `Dataset` to a local JSON file (`downloaded_emails.json`).
 
-Prompts you to log in to Hugging Face (if not already).
-Pushes your validated dataset to the repository specified in repo_id.
-Option 3 - Read from Hub:
+---
 
-Loads the dataset from your Hugging Face Hub repo back into a local Dataset object.
-Option 4 - Write to Local JSON:
-
-Saves the currently downloaded dataset to a local JSON file, one record per line.
-Option 5 - Exit.
-
+--- MENU ---
+1) Load and validate local JSON dataset
+2) Push the validated dataset to the Hugging Face Hub
+3) Read the dataset back from the Hub
+4) Write the downloaded dataset to a local JSON file
+5) Exit
+Choose an action (1-5):
